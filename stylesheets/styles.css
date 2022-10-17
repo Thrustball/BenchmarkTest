@@ -1,0 +1,13 @@
+* {
+    background-color: ghostwhite;
+}
+
+div {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/* input {
+    position: absolute;
+    left: 16%;
+} */

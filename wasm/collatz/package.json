@@ -1,0 +1,12 @@
+{
+  "name": "collatz",
+  "version": "0.1.0",
+  "files": [
+    "collatz_bg.wasm",
+    "collatz.js",
+    "collatz.d.ts"
+  ],
+  "module": "collatz.js",
+  "types": "collatz.d.ts",
+  "sideEffects": false
+}

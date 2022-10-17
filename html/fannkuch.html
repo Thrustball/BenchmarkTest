@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/scripts/cookies.js"></script>
+    <script src="/libaries/jquery-3.6.0.js"></script>
+    <script src="/scripts/fannkuch.js"></script>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Fannkuch-Redux</title>
+</head>
+<body>
+    <div class="w3-container">
+        <h1>Fannkuch-Redux Benchmark</h1>
+    </div>
+
+    <div class="w3-row">
+        <div class="w3-third w3-left-align">
+
+        <div class="w3-container">
+            <label for="iters">Number of Iterations:</label>
+            <input class="w3-input"id="iters" type="number" min="1" value="10">
+        </div>
+        <br>
+        <div class="w3-container">
+            <label for="runs">Number of Runs:</label>
+            <input class="w3-input" id="runs" type="number" min="1" value="5">
+        </div>
+        <br>
+        <div class="w3-container">
+            <label for="inp">Length of input:</label>
+            <input class="w3-input" style="width: 20%;" id="inp" type="number" min="2" max="16" value="7">
+        </div>
+        <br>
+        <div class="w3-container w3-row">
+            <input type="radio" id="js" name="language" value="js" checked="true">
+            <label for="js">JavaScript</label><br>
+            <input type="radio" id="wasm" name="language" value="wasm">
+            <label for="wasm">WebAssembly</label><br>
+        </div>
+
+        <div class="w3-container"><button class="w3-button w3-border w3-round-large" id="startButton">Flip the pancakes</button></div>
+
+        <div class="w3-container">
+            <h3>Return Values of Function</h3>
+            <p id="return-max">Maximum Number of Flips: </p>
+            <p id="return-checksum">Checksum: </p>
+        </div>
+        </div>
+
+        <div class="w3-container w3-twothird  w3-center">
+            <h2>Benchmark Results</h2>
+            <div id="results"><b>No results</b></div>
+        </div>
+    </div>
+
+    <div class="w3-row w3-container">
+        <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/performance/fannkuchredux.html">source</a>
+    </div>
+
+    <script type="module">
+        import { bench_wasm } from "/scripts/fannkuch-wasm.js";
+        $("#startButton").click(() => {
+
+            $("#return-max").text("Maximum Number of Flips: ");
+            $("#return-checksum").text("Checksum: ");
+            let n = $("#inp").val();
+
+            if($("#js").prop("checked")) {
+                // let res = fannkuch_js(n);
+                bench_js();
+                // $("#return-max").append(res.max);
+                // $("#return-checksum").append(res.checksum);
+
+
+            } else {
+                // alert("No Benchmark yet");
+                // simple_run(n);
+                bench_wasm();
+
+            }
+        });
+    </script>
+    
+</body>
+</html>

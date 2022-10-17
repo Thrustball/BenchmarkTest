@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./libaries/jquery-3.6.0.js"></script>
+    <title>Sudoku solver</title>
+</head>
+<body>
+
+    <div id="test"></div>
+
+    <script type="module">
+        import {Sudoku, returnTestSoduku} from "./scripts/sudoku.js";
+        let thisPlayfield = new Sudoku("playfield", 9);
+        thisPlayfield.generatePlayfield();
+        thisPlayfield.overrideArray(returnTestSoduku());
+        // thisPlayfield.setValue(1,2);
+
+        $("#testBTN").click(() => {
+            // let val = thisPlayfield.getValue(1,1);
+            // console.log(val);
+            thisPlayfield.solve();
+        });
+
+    </script>
+    <div id="playfield">
+    </div>
+    <br>
+    <button id="testBTN">test</button>
+    <select id="solutionsSelector"></select>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/libaries/jquery-3.6.0.js"></script>
+    <script src="/libaries/jcanvas.min.js"></script>
+    <script src="/scripts/cookies.js"></script>
+    <link rel="stylesheet" href="/stylesheets/w3.css"> 
+    <script src="/libaries/plotly-2.12.1.min.js"></script>
+    <title>Data Explorer</title>
+</head>
+<body>
+    <div class="w3-container">
+        <h1>Data Explorer</h1>
+    </div>
+
+    <div class="w3-row">
+        <p class="w3-container">
+            <label for="algorithm">Algorithms:</label>
+            <select id="algorithm" name="algorithm"></select>
+        </p>
+        <p class="w3-container">
+            <label for="user">Users:</label>
+            <select id="user" name="user"></select>
+        </p>
+         <p class="w3-container">
+            <label for="browser">Browsers:</label>
+            <select id="browser" name="browser"></select>
+        </p>
+        <div class="w3-container">
+            <button class="w3-button w3-border inp" id="testButton">Data by Algorithm</button>
+        </div>
+        <div class="w3-container">
+            <button class="w3-button w3-border inp" id="algoandbrowser">Data by Algorithm and browser</button>
+        </div>
+
+        <div class="w3-container w3-centered">
+            <!-- <div id="tester" style="width:600px;height:250px;"></div> -->
+            <div id="tester" style="width:90%;height:50%;"></div>
+        </div>
+
+        <div class="w3-container">
+            <div id="percentage"></div>
+        </div>
+    </div>
+    <script src="/scripts/data_explorer.js"></script>
+</body>
+</html>

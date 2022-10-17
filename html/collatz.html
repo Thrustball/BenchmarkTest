@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <script src="/scripts/cookies.js"></script>
+    <script src="./libaries/jquery-3.6.0.js"></script>
+    <script src="./scripts/collatz.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <title>Collatz Benchmark</title>
+</head>
+<body>
+    <div class="w3-container">
+        <h1>Collatz Benchmarker</h1>
+    </div>
+    <div class="w3-row">
+    <div class="w3-container w3-third w3-left-align">
+    <div class="w3-container">
+        <label for="iters">Number of Iterations:</label>
+        <input class="w3-input"id="iters" type="number" min="1" value="100000">
+    </div>
+    <br>
+    <div class="w3-container">
+        <label for="runs">Number of Runs:</label>
+        <input class="w3-input" id="runs" type="number" min="1" value="100">
+    </div>
+
+    <div class="w3-container w3-btn"><button id="startButton">Run Test</button></div>
+    <img class="w3-container w3-centered" style="display:none;height:30%;width:30%;" id="loading" src="./images/loading-11e.gif" />
+    <div class="w3-container w3-row">
+        <input type="radio" id="js" name="language" value="js" checked="true">
+        <label for="js">JavaScript</label><br>
+        <input type="radio" id="wasm" name="language" value="wasm">
+        <label for="wasm">WebAssembly</label><br>
+    </div>
+    <br>
+    <div class="w3-container">
+        <label for="parameter">Input parameter of function</label>
+        <input class="w3-input" id="parameter" type="number" min="1" value="9">
+    </div>
+    </div>
+    <div class="w3-container w3-twothird  w3-center">
+        <div id="results"></div>
+    </div>
+    </div>
+
+    <!-- <details class="w3-container"><summary><strong>Show Details</strong></summary><p style="margin-top: 12px;">bzw. einklappen funktioniert auch in HTML, siehe selfhtml.wiki</p></details>&nbsp; -->
+
+    <script type="module">
+        import { bench_wasm } from "./scripts/collatz_wasm.js";
+        $("#startButton").click(() => {
+            if ($("#js").prop("checked")) {
+                bench_js();
+            } else {
+                bench_wasm();
+            }
+    });
+    </script>
+</body>
+</html>

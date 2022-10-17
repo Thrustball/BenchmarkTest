@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/stylesheets/styles.css"> -->
+    <script src="./libaries/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="/stylesheets/w3.css"> 
+    <script src="/scripts/cookies.js"></script>
+    <script src="/scripts/userInfos.js"></script>
+    <title>Survey</title>
+
+    <style>
+        * {
+            background-color: ghostwhite;
+        }
+    </style>
+</head>
+<body>
+    <div class= "w3-center w3-margins">
+        <p class="w3-container inp">
+            <label for="device">Device:</label>
+            <input class="w3-input w3-border" id="device" name="device" type="text">
+        </p>
+        <br>
+        <p class="w3-container  inp">
+            <label for="os">Operating System:</label>
+            <input class="w3-input w3-border" id="os" name="os" type="text">
+        </p>
+        <br>
+        <p class="w3-container inp">
+            <label for="os-v">Operation System Version:</label>
+            <input class="w3-input w3-border" id="os-v" name="os-v" type="text">
+        </p>
+        <br>
+        <p class="w3-container inp">
+            <label for="browser">Browser:</label>
+            <input class="w3-input w3-border" id="browser" name="browser" type="text">
+        </p>
+        <br>
+        <p class="w3-container inp">
+            <label for="cpu">CPU:</label>
+            <input class="w3-input w3-border" id="cpu" name="cpu" type="text">
+        </p>
+        <br>
+        <p class="w3-container inp">
+            <label for="ram">RAM:</label>
+            <input class="w3-input w3-border" id="ram" name="ram" type="text">
+        </p>
+        <br>
+        <p class="w3-container inp">
+            <label for="gpu">GPU:</label>
+            <input class="w3-input w3-border" id="gpu" name="gpu" type="text">
+        </p>
+        <p w3-container>
+        <label for="benchmark">Benchmark:</label>
+        <select id="benchmark" name="benchmark">
+            <!-- <option value="cellauto" selected>Cellular Automata</option> -->
+            <option value="collatz" selected>Collatz</option>
+            <option value="fannkuch">Fannkuch-Redux</option>
+            <option value="mandelbrot">Mandelbrot</option>
+            <option value="nbody">n-body</option>
+            <option value="nqueens">n-Queens</option>
+        </select>
+        </p>
+        <p class="w3-container">
+        <button class="w3-button w3-border inp" onclick="sendData();" id="submit">Submit</button>
+        <button class="w3-button w3-border" onclick="gotoBench();" id="gotoBench">Switch to Benchmark</button>
+        </p>
+    </div>
+
+
+
+</body>
+</html>

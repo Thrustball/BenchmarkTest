@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/scripts/cookies.js"></script>
+    <script src="./libaries/jquery-3.6.0.js"></script>
+    <script src="../scripts/nqueens.js"></script>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <title>n-Queens</title>
+
+</head>
+<body>
+    <h1 class="w3-container">N-Queens Benchmarker</h1>
+
+    <div class="w3-row">
+        <div class="w3-container w3-third w3-left-align">
+        <div class="w3-container">
+            <label for="iters">Number of Iterations:</label>
+            <input class="w3-input"id="iters" type="number" min="1" value="100">
+        </div>
+        <br>
+        <div class="w3-container">
+            <label for="runs">Number of Runs:</label>
+            <input class="w3-input" id="runs" type="number" min="1" value="10">
+        </div>
+    <div class="w3-container"><button class="w3-button w3-border" id="startButton">Run Test</button></div>
+    <br>
+    <div class="w3-container w3-row">
+        <label for="noq">Parameter:</label>
+        <input class="w3-input" style="width: 20%;" id="noq" type="number" min="1" value="8">
+    </div>
+    <div class="w3-container w3-row">
+        <input type="radio" id="js" name="language" value="js" checked="true">
+        <label for="js">JavaScript</label><br>
+        <input type="radio" id="wasm" name="language" value="wasm">
+        <label for="wasm">WebAssembly</label><br>
+    </div>
+    <br>
+    <h2>Solution</h2>
+    <div class="w3-container w3-row" id="solution">No Solution Yet!</div>
+    </div>
+    <div class="w3-container w3-twothird  w3-center">
+        <div id="results"></div>
+    </div>
+    </div>
+
+    <script type="module">
+        import { bench_wasm } from "./scripts/nqueens_wasm.js";
+        $("#startButton").click(() => {
+
+            // let solution = [-1];
+
+            $("#result").text("");
+            let size = $("#noq").val();
+
+            if($("#js").prop("checked")) {
+                // let solution = solve_nqueens_js(size);
+                // solution.forEach((el) => {
+                //     $("#result").append(`${el} `);
+                // });
+                bench_js();
+            } else {
+                // $("#results").html("<b>Not Implemented Yet!</b>");
+                bench_wasm();
+            }
+
+
+        });
+    </script>
+
+</body>
+</html>

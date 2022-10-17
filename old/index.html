@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <title>Benchmark Test</title>
+    <!-- <script src="./libaries/lodash.js"></script>
+    <script src="./libaries/platform.js"></script>
+    <script src="./libaries/benchmark.js"></script> -->
+    <script src="./libaries/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+</head>
+<body>
+    <div class="w3-container">
+        <h1>Benchmark test</h1>
+    </div>
+    <div class="w3-row">
+    <div class="w3-container w3-third w3-left-align">
+    <div class="w3-container">
+        <label for="iters">Number of Iterations:</label>
+        <input class="w3-input"id="iters" type="number" min="1" value="100">
+    </div>
+    <br>
+    <div class="w3-container">
+        <label for="runs">Number of Runs:</label>
+        <input class="w3-input" id="runs" type="number" min="1" value="1">
+    </div>
+
+    <div class="w3-row w3-container">
+        <label for="functions">Choose a function to benchmark</label>
+        <select name="functions" id="functions">
+            <option value="collatz">Collatz</option>
+            <option value="nQueens">n-Queens</option>
+        </select>
+    </div>
+
+    <div class="w3-container w3-btn"><button id="startButton">Run Test</button></div>
+    <img class="w3-container w3-centered" style="display:none;height:30%;width:30%;" id="loading" src="./images/loading-11e.gif" />
+    <div class="w3-container w3-row">
+        <input type="radio" id="js" name="language" value="js" checked="true">
+        <label for="js">JavaScript</label><br>
+        <input type="radio" id="wasm" name="language" value="wasm">
+        <label for="wasm">WebAssembly</label><br>
+    </div>
+    </div>
+    <div class="w3-container w3-twothird  w3-center">
+        <div id="results"></div>
+    </div>
+
+    </div>
+
+
+    <script type="module">
+        import { Benchmarker } from "./scripts/benchmarker.js";
+        $("#startButton").click(() => {
+            if(navigator.userAgent.indexOf("Firefox") != -1) {
+                alert("Firefox is not supported yet")
+            } else {
+                let ben = new Benchmarker();
+                ben.benchmark();
+            }
+        });
+    </script>
+    <!-- <div id="benchmark"></div> -->
+    <!-- <script src="./scripts/script.js"></script> -->
+</body>
+</html>

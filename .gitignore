@@ -1,0 +1,5 @@
+node_modules
+**/*.db
+**/*.csv
+database/test_insert.sql
+!database/empty.db

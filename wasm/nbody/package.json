@@ -1,0 +1,12 @@
+{
+  "name": "nbody",
+  "version": "0.1.0",
+  "files": [
+    "nbody_bg.wasm",
+    "nbody.js",
+    "nbody.d.ts"
+  ],
+  "module": "nbody.js",
+  "types": "nbody.d.ts",
+  "sideEffects": false
+}
