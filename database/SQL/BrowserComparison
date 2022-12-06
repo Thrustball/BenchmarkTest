@@ -1,0 +1,7 @@
+SELECT b.uuid, language, algorithm, runs, iterations, average, parameter, u.browser, u.device FROM benchmarkTimes b, userInformation u
+WHERE
+	b.uuid = u.uuid
+AND u.device != 'test'
+AND u.uuid = '41ec21fd1e03c7c1e2999e7f522ca52d00469d27217c5e9efc9e69e6d35387ca'
+ORDER BY b.algorithm, b.language, u.browser, b.average
+;

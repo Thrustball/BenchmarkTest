@@ -1,0 +1,6 @@
+SELECT * FROM benchmarkTimes
+WHERE algorithm = 'collatz'
+AND runs = 100
+AND uuid != '2afdc5e945081d77fb5ebde2ec8e9b4fe0261e1543a63a52e815860f0c72b46d'
+ORDER BY language ASC
+;
