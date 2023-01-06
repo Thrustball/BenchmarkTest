@@ -1,0 +1,12 @@
+{
+  "name": "acht-damen",
+  "version": "0.1.0",
+  "files": [
+    "acht_damen_bg.wasm",
+    "acht_damen.js",
+    "acht_damen.d.ts"
+  ],
+  "module": "acht_damen.js",
+  "types": "acht_damen.d.ts",
+  "sideEffects": false
+}
