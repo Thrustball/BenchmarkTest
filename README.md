@@ -13,7 +13,7 @@ Instead, an empty database with the needed schema is provided in the database fo
 
 ### database
 
-Includes the 'users.db' database, which has the data about benchmark times and user information. 'empty.db' can be renamed.
+Includes the 'users.db' database, which has the data about benchmark times and user information. 'empty.db' can be renamed to create a empty database.
 
 ### html
 
